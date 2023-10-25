@@ -1,0 +1,223 @@
+/****************************************/
+/*  HEADER  */
+/***************************************/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a01441;
+  /*Sticky header*/
+  height: 5.6rem;
+  padding: 0 4.8rem;
+  position: relative;
+  margin-bottom: 0;
+  border-bottom: none !important;
+}
+
+.logo {
+  height: 2.8rem;
+  margin-left: 11.8rem;
+}
+
+/****************************************/
+/*  NAVIGATION  */
+/***************************************/
+.main-nav-list {
+  list-style: none; /*get rid of the bullet points */
+  display: flex; /* display elements side by side */
+  align-items: center;
+  gap: 4.8rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none; /*remove default text style */
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #801034;
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited{
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #a01441;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active{
+  background-color: #801034;
+}
+
+/*========== Mobile ==========*/
+
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color:#333;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+/****************************************/
+/*  MAIN APP  */
+/***************************************/
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+  font-family: "PP Supply Mono";
+  text-transform: uppercase;
+}
+
+.items {
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 5rem 0;
+  }
+  .items {
+    flex-direction: column;
+  }
+}
+
+.item {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.item-img {
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0) sepia(0) brightness(1);
+  transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.item-copy {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px;
+}
+
+.item-copy > div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+#item-1 .item-copy-2 {
+  justify-content: flex-end;
+}
+
+#item-2 .item-copy-1 {
+  justify-content: flex-end;
+}
+
+.shape {
+  width: 175px;
+  height: 175px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  color: #fff;
+  font-size: 12px;
+  padding: 10px;
+  opacity: 0;
+  transform: scale(0.75);
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#item-1 .shape {
+  clip-path: polygon(
+    0% 0px,
+    0px 0%,
+    calc(100% - 50px) 0px,
+    100% 50px,
+    100% 100%,
+    calc(100% - 0px) 100%,
+    50px 100%,
+    0px calc(100% - 50px)
+  );
+}
+
+#item-2 .shape {
+  clip-path: polygon(
+    50px 0px,
+    0px 50px,
+    0px 100%,
+    calc(100% - 50px) 100%,
+    100% calc(100% - 50px),
+    100% 100%,
+    100% 0%,
+    0px 0%
+  );
+}
+
+.shape {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.shape #number {
+  font-family: "Orbitron";
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.item:hover img {
+  transform: scale(1.5);
+  filter: grayscale(0.5) sepia(0.75) brightness(0.75);
+}
+
+.item:hover .shape {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
